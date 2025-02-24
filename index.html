@@ -1,95 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEBRO</title>
-    <style>
-        @font-face {
-            font-family: 'Glitch';
-            src: url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-        }
-        body {
-            background: url('https://www.dropbox.com/s/your_file_id/DebroCrypto.jpg?raw=1');
-            color: #ff0000;
-            text-align: center;
-            font-family: 'Glitch', monospace;
-            overflow: hidden;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 90vh;
-            gap: 10px;
-        }
-        h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 8px red;
-            animation: bounce 0.8s infinite;
-            margin-bottom: -20px;
-        }
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        img {
-            width: 40vw; /* Adjusts image width to 40% of viewport width */
-            max-width: 80%; /* Ensures it doesn't get too big on large screens */
-            height: auto; /* Maintain aspect ratio */
-            display: block;
-            border: none;
-        }
-        .marquee {
-            font-size: 2em;
-            font-weight: bold;
-            color: yellow;
-            background: black;
-            padding: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-            animation: marquee-animation 10s linear infinite;
-        }
-        @keyframes marquee-animation {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-        .blink {
-            animation: blink 1s steps(2, start) infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        .debro {
-            width: 40vw; /* Keep it smaller for better fit */
-            max-width: 80%;
-            height: auto;
-        }
-        .wurm {
-            width: 40vw; /* Match width with DEBRO */
-            max-width: 80%;
-            height: auto;
-            margin-top: -20px; /* Bring WURM closer to DEBRO */
-        }
-    </style>
-</head>
-<body>
-    <div class="marquee">🚲 DEBRO 🚲</div>
-    <div class="container">
-        <img src="https://i.imgur.com/hJyoMCX.gif" alt="DEBRO GIF" onclick="playPunchSound()" class="debro">
-        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank">
-            <img src="https://i.imgur.com/QUkkpy2.gif" alt="WURM" class="wurm">
-        </a>
-    </div>
-
-<audio id="punchSound" src="https://www.myinstants.com/media/sounds/punch.mp3"></audio>
-    <script>
-        function playPunchSound() {
-            document.getElementById('punchSound').play();
-        }
-    </script>
-</body>
-</html>
+@media (min-width: 1200px) {
+  .image-container {
+    max-width: 500px; /* Adjust for large screens */
+  }
+}
+@media (max-width: 768px) {
+  .image-container {
+    max-width: 300px; /* Adjust for mobile */
+  }
+}
