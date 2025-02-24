@@ -37,8 +37,9 @@
             100% { transform: translateY(0); }
         }
         img {
-            width: 300px;
-            height: auto;
+            width: 50vw; /* Adjusts image width to 50% of viewport width */
+            max-width: 90%; /* Ensures it doesn't get too big on large screens */
+            height: auto; /* Maintain aspect ratio */
             display: block;
             border: none;
             margin-bottom: 5px;
@@ -69,9 +70,15 @@
 <body>
     <div class="marquee">🚲 DEBRO 🚲</div>
     <div class="container">
-        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank"><img src="https://i.imgur.com/hJyoMCX.gif" alt="DEBRO GIF"></a>
+        <img src="https://i.imgur.com/hJyoMCX.gif" alt="DEBRO GIF" onclick="playPunchSound()">
         <p></p>
-        <img src="https://i.imgur.com/QUkkpy2.gif" alt="" style="width: 25%;">
+        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank"><img src="https://i.imgur.com/QUkkpy2.gif" alt=""</a> style="width: 25%;">
     </div>
+<audio id="punchSound" src="https://www.myinstants.com/media/sounds/punch.mp3"></audio>
+    <script>
+        function playPunchSound() {
+            document.getElementById('punchSound').play();
+        }
+    </script>
 </body>
 </html>
