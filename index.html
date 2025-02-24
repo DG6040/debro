@@ -21,7 +21,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 80vh;
+            height: 100vh;
             gap: 10px;
         }
         h1 {
@@ -36,8 +36,8 @@
             100% { transform: translateY(0); }
         }
         img {
-            width: 30vw; /* Adjusts image width to 40% of viewport width */
-            max-width: 80%; /* Ensures it doesn't get too big on large screens */
+            width: 70vw; /* Adjusts image width to 50% of viewport width */
+            max-width: 100vw; /* Ensures it doesn't get too big on large screens */
             height: auto; /* Maintain aspect ratio */
             display: block;
             border: none;
@@ -64,17 +64,23 @@
             50% { opacity: 0; }
         }
         .debro {
-            width: 30vw; /* Keep it smaller for better fit */
-            max-width: 80%;
+            width: 70vw; /* Keep it responsive for mobile */
+            max-width: 100vw;
             height: auto;
         }
         .wurm {
-            width: 30vw; /* Match width with DEBRO */
-            max-width: 80%;
+            width: 70vw; /* Match width with DEBRO */
+            max-width: 100vw;
             height: auto;
             margin-top: 10px; /* Bring WURM closer to DEBRO */
         }
-    </style>
+    @media (max-width: 768px) {
+            .debro, .wurm {
+                width: 80vw;
+                max-width: 95vw;
+            }
+        }
+</style>
 </head>
 <body>
     <div class="marquee">🚲 DEBRO 🚲</div>
