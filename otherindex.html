@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBRO</title>
+    <style>
+        @font-face {
+            font-family: 'Glitch';
+            src: url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        }
+        body {
+            background: url('https://www.dropbox.com/s/your_file_id/OtherCrypto.jpg?raw=1');
+            color: #ff0000;
+            text-align: center;
+            font-family: 'Glitch', monospace;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 10px;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 8px red;
+            animation: bounce 0.8s infinite;
+            margin-bottom: -20px;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        img {
+            width: 70vw;
+            max-width: 100vw;
+            height: auto;
+            display: block;
+            border: none;
+        }
+        .marquee {
+            font-size: 2em;
+            font-weight: bold;
+            color: yellow;
+            background: black;
+            padding: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: marquee-animation 10s linear infinite;
+        }
+        @keyframes marquee-animation {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        .blink {
+            animation: blink 1s steps(2, start) infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .other {
+            width: 70vw;
+            max-width: 100vw;
+            height: auto;
+        }
+        .alternate {
+            width: 70vw;
+            max-width: 100vw;
+            height: auto;
+            margin-top: 10px;
+        }
+    @media (max-width: 768px) {
+            .other, .alternate {
+                width: 80vw;
+                max-width: 95vw;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="marquee">🚲 DEBRO 🚲</div>
+    <div class="container">
+        <img src="https://imgur.com/KcZb6ts.gif" alt="OTHER GIF" class="debro">
+        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank">
+            <img src="https://i.imgur.com/QUkkpy2.gif" alt="ALTERNATE" class="wurm">
+        </a>
+    </div>
+<audio id="punchSound" src="https://www.myinstants.com/media/sounds/punch.mp3"></audio>
+    <img id="smokeyEffect" class="smokey" src="" alt="Smokey Reaction">
+    <script>
+        let punchImages = [
+            'https://i.imgur.com/8jzP6Mu.gif',
+            'https://i.imgur.com/E0aoiVk.gif',
+            'https://i.imgur.com/TCqgHmN.gif',
+            'https://i.imgur.com/JY9hDLP.gif',
+            'https://i.imgur.com/mij9QWp.gif'
+        ];
+        let punchIndex = 0;
+
+        function playPunchSound() {
+            document.getElementById('punchSound').play();
+            let smokeyImg = document.getElementById('smokeyEffect');
+            smokeyImg.src = punchImages[punchIndex];
+            smokeyImg.style.display = 'block';
+            setTimeout(() => { smokeyImg.style.display = 'none'; }, 100);
+            punchIndex = (punchIndex + 1) % punchImages.length;
+        }
+    </script>
+</body>
+</html>
 
