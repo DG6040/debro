@@ -10,8 +10,7 @@
             src: url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
         }
         body {
-            background: url('https://www.dropbox.com/s/your_file_id/DebroCrypto.jpg?raw=1') no-repeat center center fixed;
-            background-size: cover;
+            background: url('https://www.dropbox.com/s/your_file_id/DebroCrypto.jpg?raw=1');
             color: #ff0000;
             text-align: center;
             font-family: 'Glitch', monospace;
@@ -23,7 +22,8 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            gap: 10px;
+            min-height: 100vh;
+            gap: -20px;
         }
         h1 {
             font-size: 3em;
@@ -40,8 +40,8 @@
             width: 300px;
             height: auto;
             display: block;
-            border: 5px solid red;
-            margin-bottom: 10px;
+            border: none;
+            margin-bottom: 5px;
         }
         .marquee {
             font-size: 2em;
@@ -51,9 +51,7 @@
             padding: 10px;
             white-space: nowrap;
             overflow: hidden;
-            width: 100%;
-            display: block;
-            text-align: center;
+            display: inline-block;
             animation: marquee-animation 10s linear infinite;
         }
         @keyframes marquee-animation {
@@ -71,7 +69,9 @@
 <body>
     <div class="marquee">🚲 DEBRO 🚲</div>
     <div class="container">
-        <img src="https://i.imgur.com/B4Z5ReN.gif" alt="New DEBRO GIF">
+        <img src="https://i.imgur.com/hJyoMCX.gif" alt="DEBRO GIF">
+        <p></p>
+        <img src="https://i.imgur.com/QUkkpy2.gif" alt="My bike Punk!" style="width: 25%;">
     </div>
 </body>
 </html>
