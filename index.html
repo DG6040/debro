@@ -21,9 +21,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            min-height: 100vh;
-            gap: -20px;
+            height: 90vh;
+            gap: 10px;
         }
         h1 {
             font-size: 3em;
@@ -37,12 +36,11 @@
             100% { transform: translateY(0); }
         }
         img {
-            width: 50vw; /* Adjusts image width to 50% of viewport width */
-            max-width: 90%; /* Ensures it doesn't get too big on large screens */
+            width: 40vw; /* Adjusts image width to 40% of viewport width */
+            max-width: 80%; /* Ensures it doesn't get too big on large screens */
             height: auto; /* Maintain aspect ratio */
             display: block;
             border: none;
-            margin-bottom: 5px;
         }
         .marquee {
             font-size: 2em;
@@ -65,15 +63,28 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+        .debro {
+            width: 40vw; /* Keep it smaller for better fit */
+            max-width: 80%;
+            height: auto;
+        }
+        .wurm {
+            width: 40vw; /* Match width with DEBRO */
+            max-width: 80%;
+            height: auto;
+            margin-top: -20px; /* Bring WURM closer to DEBRO */
+        }
     </style>
 </head>
 <body>
     <div class="marquee">🚲 DEBRO 🚲</div>
     <div class="container">
-        <img src="https://i.imgur.com/hJyoMCX.gif" alt="DEBRO GIF" onclick="playPunchSound()">
-        <p></p>
-        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank"><img src="https://i.imgur.com/QUkkpy2.gif" alt=""</a> style="width: 25%;">
+        <img src="https://i.imgur.com/hJyoMCX.gif" alt="DEBRO GIF" onclick="playPunchSound()" class="debro">
+        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank">
+            <img src="https://i.imgur.com/QUkkpy2.gif" alt="WURM" class="wurm">
+        </a>
     </div>
+
 <audio id="punchSound" src="https://www.myinstants.com/media/sounds/punch.mp3"></audio>
     <script>
         function playPunchSound() {
