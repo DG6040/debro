@@ -36,8 +36,8 @@
             100% { transform: translateY(0); }
         }
         img {
-            width: 70vw;
-            max-width: 100vw;
+            width: 35vw;
+            max-width: 50vw;
             height: auto;
             display: block;
             border: none;
@@ -64,13 +64,13 @@
             50% { opacity: 0; }
         }
         .other {
-            width: 70vw;
-            max-width: 100vw;
+            width: 35vw;
+            max-width: 50vw;
             height: auto;
         }
         .alternate {
-            width: 70vw;
-            max-width: 100vw;
+            width: 35vw;
+            max-width: 50vw;
             height: auto;
             margin-top: 10px;
         }
@@ -85,13 +85,13 @@
 <body>
     <div class="marquee">🚲 DEBRO 🚲</div>
     <div class="container">
-        <img src="https://imgur.com/KcZb6ts.gif" alt="OTHER GIF" class="debro">
-        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank">
+        <img src="https://imgur.com/KcZb6ts.gif" alt="OTHER GIF" class="debro" onclick="playPunchSound()">
+        <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank" onclick="playWormSound(event)">
             <img src="https://i.imgur.com/QUkkpy2.gif" alt="ALTERNATE" class="wurm">
         </a>
     </div>
 <audio id="punchSound" src="https://www.myinstants.com/media/sounds/punch.mp3"></audio>
-    <img id="smokeyEffect" class="smokey" src="" alt="Smokey Reaction">
+    <img id="smokeyEffect" class="smokey" src="" alt="Smokey Reaction" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 35vw; max-width: 50vw; height: auto; display: none; z-index: 2;">
     <script>
         let punchImages = [
             'https://i.imgur.com/8jzP6Mu.gif',
@@ -107,10 +107,19 @@
             let smokeyImg = document.getElementById('smokeyEffect');
             smokeyImg.src = punchImages[punchIndex];
             smokeyImg.style.display = 'block';
-            setTimeout(() => { smokeyImg.style.display = 'none'; }, 100);
+            setTimeout(() => { smokeyImg.style.display = 'none'; }, 300);
             punchIndex = (punchIndex + 1) % punchImages.length;
+        }
+    </script>
+<audio id="wormSound" src="/mnt/data/Voicy_Worm_Trimmed.mp3"></audio>
+    <script>
+        function playWormSound(event) {
+            event.preventDefault(); // Prevents immediate navigation
+            let audio = document.getElementById('wormSound');
+            audio.play();
+            audio.onended = () => { window.location.href = 'https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump'; }
+            document.getElementById('wormSound').play();
         }
     </script>
 </body>
 </html>
-
