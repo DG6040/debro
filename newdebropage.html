@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezell Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('https://www.dropbox.com/s/your_file_id/OtherCrypto.jpg?raw=1');
+            color: #ff0000;
+            font-family: 'Glitch', monospace;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 10px;
+            position: relative;
+        }
+        .profile-pic img {
+            width: 35vw;
+            max-width: 50vw;
+            cursor: pointer;
+        }
+        .smokey {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35vw;
+            max-width: 50vw;
+            display: none;
+            z-index: 2;
+        }
+        .wurm {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 150px;
+            height: auto;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-pic">
+            <img src="https://imgur.com/hJyoMCX.png" alt="Debro Profile" onclick="playPunchSound()">
+        </div>
+        <img id="smokeyEffect" class="smokey" src="" alt="Smokey Reaction">
+    </div>
+    
+    <a href="https://pump.fun/coin/5h6zY2taF2Jm1iXQjw8dGzgwynZEvmW9m7ZMHXyCpump" target="_blank">
+        <img class="wurm" src="https://i.imgur.com/QUkkpy2.gif" alt="Wurm GIF">
+    </a>
+    
+    <audio id="punchSound" src="https://www.myinstants.com/media/sounds/punch.mp3"></audio>
+    <script>
+        let punchImages = [
+            'https://i.imgur.com/8jzP6Mu.gif',
+            'https://i.imgur.com/E0aoiVk.gif',
+            'https://i.imgur.com/TCqgHmN.gif',
+            'https://i.imgur.com/JY9hDLP.gif',
+            'https://i.imgur.com/mij9QWp.gif'
+        ];
+        let punchIndex = 0;
+
+        function playPunchSound() {
+            document.getElementById('punchSound').play();
+            let smokeyImg = document.getElementById('smokeyEffect');
+            smokeyImg.src = punchImages[punchIndex];
+            smokeyImg.style.display = 'block';
+            setTimeout(() => { smokeyImg.style.display = 'none'; }, 300);
+            punchIndex = (punchIndex + 1) % punchImages.length;
+        }
+    </script>
+</body>
+</html>
